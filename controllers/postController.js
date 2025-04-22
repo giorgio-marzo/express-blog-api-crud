@@ -7,7 +7,14 @@ function index(req, res) {
 
 //show
 function show(req, res) {
-    res.send(`post con id: ${req.params.id} `);
+    const id = parseInt(req.params.id)
+
+    const postPos = postData.find((postPos) => {
+        return postPos.id === id;
+    })
+
+    res.json(postPos)
+
 }
 
 //store
