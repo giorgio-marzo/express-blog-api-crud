@@ -34,7 +34,19 @@ function modify(req, res) {
 
 //destroy
 function destroy(req, res) {
-    res.send(`rimozione totale post con id: ${req.params.id} `);
+    const id = parseInt(req.params.id)
+
+    const postDel = postData.find((postDel) => {
+        return postDel.id === id;
+    })
+
+    postData.splice(postData.indexOf(postDel), 1);
+
+    // verifica rimozione
+    console.log(postData)
+
+    //codice di stato 204
+    res.sendStatus(204)
 }
 
 module.exports = { index, show, store, update, modify, destroy }
