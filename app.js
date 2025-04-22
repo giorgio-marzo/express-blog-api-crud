@@ -17,7 +17,7 @@ const routerPost = require('./routers/post.js')
 
 // utilizzo il router per definire rotte col prefisso post
 
-app.use('/posts', routerPost)
+app.use('/post', routerPost)
 
 // diciamo al server di rimanere in ascolto su la suddetta porta
 
@@ -27,6 +27,6 @@ app.listen(port, () => {
 
 //inserisco rotta base
 
-app.get('/', (req, res) =>{
+app.get('/', (req, res) => {
     res.send('Rotta Principale')
 })
