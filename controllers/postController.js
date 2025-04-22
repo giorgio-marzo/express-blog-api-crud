@@ -14,3 +14,13 @@ function show(req, res) {
 function store(req, res) {
     res.send(`aggiunta nuovo post`);
 }
+
+//update
+function update(req, res) {
+    res.send(`modifica totale post con id: ${req.params.id} `);
+}
+
+//modify
+function modify(req, res) {
+    res.send(`modifica parziale post con id: ${req.params.id} `);
+}
