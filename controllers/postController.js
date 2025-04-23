@@ -49,7 +49,25 @@ function store(req, res) {
 
 //update
 function update(req, res) {
-    res.send(`modifica totale post con id: ${req.params.id} `);
+
+    // id del post da modificare
+    const id = parseInt(req.params.id);
+
+    const postMod = postData.find(postMod => postMod.id === id);
+
+    // destrutturo il body.req
+    const { title, content, image, tags } = req.body
+
+    //nuovo post
+    postMod.title = title;
+    postMod.content = content;
+    postMod.image = image;
+    postMod.tags = tags;
+
+    console.log(postData)
+
+
+
 }
 
 //modify
