@@ -66,7 +66,10 @@ function update(req, res) {
 
     console.log(postData)
 
+    //  risposta post modificato
 
+
+    res.json(postMod)
 
 }
 
