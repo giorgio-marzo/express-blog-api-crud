@@ -39,6 +39,12 @@ function store(req, res) {
     postData.push(newPost);
 
     console.log(postData)
+
+    //  codice stato 201 e risposta nuovo post
+    res.status(201)
+
+    res.json(newPost)
+
 }
 
 //update
