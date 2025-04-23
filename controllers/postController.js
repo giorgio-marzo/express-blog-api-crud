@@ -19,7 +19,26 @@ function show(req, res) {
 
 //store
 function store(req, res) {
-    console.log(req.body);
+    //console.log(req.body);
+
+    //nuovo id
+    const newId = postData[postData.length - 1].id + 1;
+
+    // destrutturo il body.req
+    const { title, content, image, tags } = req.body
+
+    //nuovo post
+    const newPost = {
+        id: newId,
+        title,
+        content,
+        image,
+        tags
+    }
+
+    postData.push(newPost);
+
+    console.log(postData)
 }
 
 //update
