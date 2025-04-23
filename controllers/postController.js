@@ -19,7 +19,7 @@ function show(req, res) {
 
 //store
 function store(req, res) {
-    res.send(`aggiunta nuovo post`);
+    console.log(req.body);
 }
 
 //update

@@ -11,6 +11,10 @@ const app = express()
 
 const port = 3000;
 
+// le richieste del body in formato json
+
+app.use(express.json());
+
 // import router
 
 const routerPost = require('./routers/post.js')
