@@ -3,6 +3,9 @@
 // import express
 const express = require('express');
 
+// import middleware notFound
+const nonTrovo = require(`./Middlewares/notFound.js`)
+
 // inizializziamo express
 
 const app = express()
@@ -34,3 +37,7 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
     res.send('Rotta Principale')
 })
+
+// registro il middleware notFound
+
+app.use(nonTrovo)
