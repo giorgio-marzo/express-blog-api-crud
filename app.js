@@ -6,6 +6,8 @@ const express = require('express');
 // import middleware notFound
 const nonTrovo = require(`./Middlewares/notFound.js`)
 
+// import middleware errorsHandler
+const errGen = require(`./Middlewares/errorsHandler.js`)
 // inizializziamo express
 
 const app = express()
@@ -20,7 +22,8 @@ app.use(express.json());
 
 // import router
 
-const routerPost = require('./routers/post.js')
+const routerPost = require('./routers/post.js');
+const errorsHandler = require('./Middlewares/errorsHandler.js');
 
 // utilizzo il router per definire rotte col prefisso post
 
@@ -41,3 +44,6 @@ app.get('/', (req, res) => {
 // registro il middleware notFound
 
 app.use(nonTrovo)
+
+// registro il middleware errorsHandler
+app.use(errGen)

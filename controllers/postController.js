@@ -2,6 +2,11 @@ const postData = require(`../data/posts.js`)
 
 //index
 function index(req, res) {
+
+    const tag = req.query.tag
+
+    tag = `prova errore`
+
     res.json(postData);
 }
 
